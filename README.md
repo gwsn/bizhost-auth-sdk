@@ -1,5 +1,5 @@
 # Bizhost Authentication SDK
-For the Symfony Bundle see the package: [gwsn/bizhost-auth-sdk](https://gitlab.com/gwsn/packages/bizhost-auth-sdk)
+For the Symfony Bundle see the package: [gwsn/bizhost-auth-sdk](https://github.com/gwsn/bizhost-auth-sdk)
 
 ## Installation
 You can install the package via composer:
@@ -9,7 +9,7 @@ composer require gwsn/bizhost-auth-sdk
 ```
 
 ## When using in symfony go to the bundle instead
-[gwsn/bizhost-auth-bundle](https://gitlab.com/gwsn/packages/bizhost-auth-bundle)
+[gwsn/bizhost-auth-bundle](https://github.com/gwsn/bizhost-auth-bundle)
 
 
 ## First configuration to start usage
