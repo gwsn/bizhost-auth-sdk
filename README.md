@@ -1,5 +1,5 @@
 # Bizhost Authentication SDK
-For the Symfony Bundle see the package: [gwsn/bizhost-auth](https://gitlab.com/gwsn/packages/bizhost-auth-sdk)
+For the Symfony Bundle see the package: [gwsn/bizhost-auth-sdk](https://gitlab.com/gwsn/packages/bizhost-auth-sdk)
 
 ## Installation
 You can install the package via composer:
@@ -7,6 +7,10 @@ You can install the package via composer:
 ``` bash
 composer require gwsn/bizhost-auth-sdk
 ```
+
+## When using in symfony go to the bundle instead
+[gwsn/bizhost-auth-bundle](https://gitlab.com/gwsn/packages/bizhost-auth-bundle)
+
 
 ## First configuration to start usage
 
@@ -27,20 +31,29 @@ You need to request a new clientId and clientSecret for the application
 
 ## Basic setup for the Bizhost Authentication SDK 
 ``` php
-use Bizhost\Authentication\Adapter
 
-$authMetaUrl = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx';
-$clientId = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx';
-$clientSecret = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+$apiUrl = 'https://auth-test.bizhost.nl';
+$clientId = 'your-client-id';
+$clientSecret = 'your-client-secret';
+$redirectUrl = 'http://localhost:8000/code-flow.php';
+$issuerMetaDataPath = '/.well-known/oauth-authorization-server';
 
-@todo
+$config = new AuthClientConfig(
+    apiUrl: $apiUrl,
+    clientId: $clientId,
+    clientSecret: $clientSecret,
+    redirectUrl: $redirectUrl,
+    issuerMetaDataPath: $issuerMetaDataPath
+);
+
+$authService = new AuthenticateService(
+    $config,
+);
+
+
 ```
 
-## Call to fetch AccessToken via Client Credential Flow
-``` php
-
-```
-
+For more information see the examples directory
 
 ## Testing
 

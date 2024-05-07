@@ -11,7 +11,7 @@ trait MetadataTrait
     public function fetchMetadata(AuthClientInterface $client, AuthClientConfig $config): void
     {
         try {
-            $response = $client->sendUnAuthenticated('GET', $config->getIssuerMetaDataPath());
+            $response = $client->sendUnAuthenticated('GET', $config->getApiUrl().$config->getIssuerMetaDataPath());
 
             // Transform response to Metadata
             $config->setMetadata(new Metadata(

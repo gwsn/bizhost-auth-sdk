@@ -9,17 +9,18 @@ use Bizhost\Authentication\Adapter\Token\Model\Token;
 
 require_once __DIR__ . '../vendor/autoload.php';
 
+$apiUrl = 'https://auth-test.bizhost.nl';
 $clientId = 'your-client-id';
 $clientSecret = 'your-client-secret';
 $redirectUrl = 'http://localhost:8000/code-flow.php';
-$issuerMetaDataUrl = 'https://auth.bizhost.nl/.well-known/oauth-authorization-server';
+$issuerMetaDataPath = '/.well-known/oauth-authorization-server';
 
 $config = new AuthClientConfig(
-    apiUrl: 'https://auth-test.bizhost.nl',
+    apiUrl: $apiUrl,
     clientId: $clientId,
     clientSecret: $clientSecret,
     redirectUrl: $redirectUrl,
-    issuerMetaDataUrl: $issuerMetaDataUrl
+    issuerMetaDataPath: $issuerMetaDataPath
 );
 
 $authService = new AuthenticateService(
