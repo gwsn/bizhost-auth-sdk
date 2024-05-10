@@ -2,16 +2,12 @@
 
 namespace Bizhost\Authentication\Adapter\Token\Model;
 
-class Token implements TokenInterface
+class AccessToken implements TokenInterface
 {
 
     public function __construct(
         private readonly string    $accessToken,
-        private readonly string    $refreshToken,
-        private readonly int       $expiresIn,
-        private readonly string    $tokenType,
-        private readonly \stdClass $decoded,
-        private readonly array    $scope
+        private readonly \stdClass $decoded
     )
     {
     }
@@ -21,19 +17,19 @@ class Token implements TokenInterface
         return $this->accessToken;
     }
 
-    public function getRefreshToken(): string
+    public function getRefreshToken(): string|null
     {
-        return $this->refreshToken;
+        return null;
     }
 
     public function getExpiresIn(): int
     {
-        return $this->expiresIn;
+        return 28800;
     }
 
     public function getTokenType(): string
     {
-        return $this->tokenType;
+        return 'Bearer';
     }
 
     public function getDecoded(): \stdClass
@@ -41,8 +37,8 @@ class Token implements TokenInterface
         return $this->decoded;
     }
 
-    public function getScope(): array
+    public function getScope(): array|null
     {
-        return $this->scope;
+        return null;
     }
 }
