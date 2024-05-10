@@ -20,6 +20,7 @@ class TokenService {
     ){
         $this->client = new MetadataApiClient($this->config);
         $this->fetchMetadata($this->client, $this->config);
+        $this->fetchKeys($this->client, $this->config);
     }
 
     public function decodeTokenResponse(object $tokenResponse): ?Token {
