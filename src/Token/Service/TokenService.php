@@ -2,7 +2,7 @@
 
 namespace Bizhost\Authentication\Adapter\Token\Service;
 
-use Bizhost\Authentication\Adapter\Authenticate\Service\MetadataApiClient;
+use Bizhost\Authentication\Adapter\Client\MetadataApiClient;
 use Bizhost\Authentication\Adapter\Client\AuthClientConfig;
 use Bizhost\Authentication\Adapter\Client\MetadataTrait;
 use Bizhost\Authentication\Adapter\Token\Model\Token;

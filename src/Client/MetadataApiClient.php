@@ -1,6 +1,6 @@
 <?php
 
-namespace Bizhost\Authentication\Adapter\Authenticate\Service;
+namespace Bizhost\Authentication\Adapter\Client;
 
 use Bizhost\Authentication\Adapter\Client\Exception\AuthClientGenericServerException;
 use Bizhost\Authentication\Adapter\Client\Exception\AuthClientServerException;
